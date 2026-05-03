@@ -1,0 +1,119 @@
+-- Ticket: 1
+-- Description: create_core_table
+-- Schema: identity
+-- Type: structure
+-- Date: ~0,4-~4,2-~6,2
+-- Author: nppna
+
+-- =============================================================================
+-- MIGRATION: create_core_table
+-- =============================================================================
+-- Purpose: [Detailed explanation of why this change is needed]
+--
+-- Impact:
+--   - Tables affected: identity.[table_name]
+--   - Estimated execution time: [X seconds]
+--   - Backward compatible: [Yes/No]
+--   - Requires data migration: [Yes/No]
+--
+-- Testing:
+--   - [ ] Tested on local database
+--   - [ ] Verified with existing data
+--   - [ ] Application tested
+--
+-- Rollback:
+--   - Method: Create new migration to undo
+-- =============================================================================
+
+-- =============================================================================
+-- STRUCTURE MIGRATION - Schema Changes
+-- =============================================================================
+
+-- Example: Create Table
+-- CREATE TABLE IF NOT EXISTS identity.table_name (
+--     "Id" BIGSERIAL PRIMARY KEY,
+--     "Name" VARCHAR(255) NOT NULL,
+--     "Status" VARCHAR(5) DEFAULT 'ACT',
+--     "CreatedOn" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     "CreatedBy" VARCHAR(100),
+--     "ModifiedOn" TIMESTAMP,
+--     "ModifiedBy" VARCHAR(100)
+-- );
+
+-- Example: Add Column
+-- ALTER TABLE identity.table_name
+-- ADD COLUMN IF NOT EXISTS "ColumnName" VARCHAR(255);
+
+-- Example: Create Index
+-- CREATE INDEX IF NOT EXISTS idx_table_column
+-- ON identity.table_name("ColumnName");
+
+-- Add your migration SQL here:
+
+
+-- =============================================================================
+-- POST-MIGRATION VALIDATION
+-- =============================================================================
+
+-- DO $$
+-- BEGIN
+--     IF NOT EXISTS (
+--         SELECT 1 FROM information_schema.columns
+--         WHERE table_schema = 'identity'
+--         AND table_name = 'table_name'
+--         AND column_name = 'ColumnName'
+--     ) THEN
+--         RAISE EXCEPTION 'Migration failed: Column not created';
+--     END IF;
+--
+--     RAISE NOTICE 'Migration completed successfully';
+-- END $$;
+
+--CREATE SCHEMA
+CREATE SCHEMA IF NOT EXISTS identity;
+
+-- USERS
+CREATE TABLE identity.users (
+    "Id" BIGINT PRIMARY KEY,
+    "Email" VARCHAR(255) NOT NULL UNIQUE,
+    "Phone" VARCHAR(20) NOT NULL UNIQUE,
+    "Location" VARCHAR(500),
+    "DisplayName" VARCHAR(200),
+    "PasswordHash" VARCHAR(500),
+    "FailedLoginAttempts" INT,
+    "Status" VARCHAR(5),
+    "CreatedOn" TIMESTAMP,
+    "CreatedBy" VARCHAR(100),
+    "ModifiedOn" TIMESTAMP,
+    "ModifiedBy" VARCHAR(100)
+);
+
+-- USER_SESSIONS
+CREATE TABLE identity.user_session (
+    "Id" BIGINT PRIMARY KEY,
+    "UserId" BIGINT NOT NULL,
+    "SessionToken" VARCHAR(500) NOT NULL,
+    "RefreshToken" VARCHAR(500) NOT NULL,
+    "DeviceInfo" VARCHAR(500),
+    "IpAddress" VARCHAR(45),
+    "DeviceId" VARCHAR(100),
+    "UserAgent" VARCHAR(1000),
+    "ExpiresAt" TIMESTAMP,
+    "LastAccessedOn" TIMESTAMP,
+    "RevokedOn" TIMESTAMP,
+    "Status" VARCHAR(5),
+    "CreatedOn" TIMESTAMP,
+    "CreatedBy" VARCHAR(100)
+);
+
+-- ROLES
+CREATE TABLE identity.roles (
+    "Id" BIGINT PRIMARY KEY,
+    "Name" VARCHAR(100),
+    "Description" VARCHAR(500),
+    "Status" VARCHAR(5),
+    "CreatedOn" TIMESTAMP,
+    "CreatedBy" VARCHAR(100),
+    "ModifiedOn" TIMESTAMP,
+    "ModifiedBy" VARCHAR(100)
+);

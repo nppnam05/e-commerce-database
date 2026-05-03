@@ -1,0 +1,107 @@
+-- Ticket: 1
+-- Description: create_core_table
+-- Schema: sales
+-- Type: structure
+-- Date: ~0,4-~4,2-~6,2
+-- Author: nppna
+
+-- =============================================================================
+-- MIGRATION: create_core_table
+-- =============================================================================
+-- Purpose: [Detailed explanation of why this change is needed]
+--
+-- Impact:
+--   - Tables affected: sales.[table_name]
+--   - Estimated execution time: [X seconds]
+--   - Backward compatible: [Yes/No]
+--   - Requires data migration: [Yes/No]
+--
+-- Testing:
+--   - [ ] Tested on local database
+--   - [ ] Verified with existing data
+--   - [ ] Application tested
+--
+-- Rollback:
+--   - Method: Create new migration to undo
+-- =============================================================================
+
+-- =============================================================================
+-- STRUCTURE MIGRATION - Schema Changes
+-- =============================================================================
+
+-- Example: Create Table
+-- CREATE TABLE IF NOT EXISTS sales.table_name (
+--     "Id" BIGSERIAL PRIMARY KEY,
+--     "Name" VARCHAR(255) NOT NULL,
+--     "Status" VARCHAR(5) DEFAULT 'ACT',
+--     "CreatedOn" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     "CreatedBy" VARCHAR(100),
+--     "ModifiedOn" TIMESTAMP,
+--     "ModifiedBy" VARCHAR(100)
+-- );
+
+-- Example: Add Column
+-- ALTER TABLE sales.table_name
+-- ADD COLUMN IF NOT EXISTS "ColumnName" VARCHAR(255);
+
+-- Example: Create Index
+-- CREATE INDEX IF NOT EXISTS idx_table_column
+-- ON sales.table_name("ColumnName");
+
+-- Add your migration SQL here:
+
+
+-- =============================================================================
+-- POST-MIGRATION VALIDATION
+-- =============================================================================
+
+-- DO $$
+-- BEGIN
+--     IF NOT EXISTS (
+--         SELECT 1 FROM information_schema.columns
+--         WHERE table_schema = 'sales'
+--         AND table_name = 'table_name'
+--         AND column_name = 'ColumnName'
+--     ) THEN
+--         RAISE EXCEPTION 'Migration failed: Column not created';
+--     END IF;
+--
+--     RAISE NOTICE 'Migration completed successfully';
+-- END $$;
+
+--CREATE SCHEMA
+CREATE SCHEMA IF NOT EXISTS sales;
+
+-- CART
+CREATE TABLE sales.carts (
+    "Id" BIGINT PRIMARY KEY,
+    "UserId" BIGINT NOT NULL,
+    "ProductId" BIGINT NOT NULL,
+    "Quantity" INT,
+    "SinglePrice" DECIMAL,
+    "Status" VARCHAR(5),
+    "CreatedOn" TIMESTAMP,
+    "CreatedBy" VARCHAR(100),
+    "ModifiedOn" TIMESTAMP,
+    "ModifiedBy" VARCHAR(100)
+);
+
+-- ORDER
+CREATE TABLE sales.orders (
+    "Id" BIGINT PRIMARY KEY,
+    "UserId" BIGINT NOT NULL,
+    "Status" VARCHAR(5),
+    "CreatedOn" TIMESTAMP,
+    "CreatedBy" VARCHAR(100),
+    "ModifiedOn" TIMESTAMP,
+    "ModifiedBy" VARCHAR(100)
+);
+
+-- ORDER_PRODUCTS
+CREATE TABLE sales.order_products (
+    "Id" BIGINT PRIMARY KEY,
+    "OrderId" BIGINT NOT NULL,
+    "ProductId" BIGINT NOT NULL,
+    "Quantity" INT,
+    "SinglePrice" DECIMAL
+);
