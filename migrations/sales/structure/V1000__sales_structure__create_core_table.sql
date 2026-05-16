@@ -103,5 +103,10 @@ CREATE TABLE sales.order_products (
     "OrderId" BIGINT NOT NULL,
     "ProductId" BIGINT NOT NULL,
     "Quantity" INT,
-    "SinglePrice" DECIMAL
+    "SinglePrice" DECIMAL,
+    "Status" VARCHAR(5),
+    "CreatedOn" TIMESTAMP,
+    "CreatedBy" VARCHAR(100),
+    "ModifiedOn" TIMESTAMP,
+    "ModifiedBy" VARCHAR(100)
 );
