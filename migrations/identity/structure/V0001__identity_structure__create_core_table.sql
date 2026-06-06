@@ -121,3 +121,9 @@ CREATE TABLE identity.roles (
     "ModifiedOn" TIMESTAMP,
     "ModifiedBy" VARCHAR(100)
 );
+
+-- =============================================================================
+-- FOREIGN KEYS
+-- =============================================================================
+ALTER TABLE identity.user_session
+    ADD CONSTRAINT "fk_user_session_user" FOREIGN KEY ("UserId") REFERENCES identity.users("Id");

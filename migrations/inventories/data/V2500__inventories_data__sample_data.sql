@@ -110,21 +110,22 @@ INSERT INTO inventories.products ("CategoryId", "ColorId", "SizeId", "Price", "N
 
 -- 2. BỔ SUNG HÌNH ẢNH TƯƠNG ỨNG VÀO BẢNG PRODUCT_IMAGES
 INSERT INTO inventories.product_images ("productId", "url", "Status", "CreatedOn", "CreatedBy") VALUES
-(1, 'https://example.com/images/ao-polo-den-m.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(2, 'https://example.com/images/ao-polo-trang-l.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(3, 'https://example.com/images/ao-thun-the-thao-xanh.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(4, 'https://example.com/images/ao-so-mi-cong-so-den.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(5, 'https://example.com/images/ao-khoac-bomber-xam.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(6, 'https://example.com/images/quan-jean-den.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(7, 'https://example.com/images/quan-kaki-xam.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(8, 'https://example.com/images/quan-tay-ong-dung-xam.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(9, 'https://example.com/images/quan-short-the-thao-den.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(10, 'https://example.com/images/quan-kaki-tui-hop-xanh.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(11, 'https://example.com/images/giay-sneaker-trang.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(12, 'https://example.com/images/giay-chay-bo-black-40.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(13, 'https://example.com/images/vi-da-den.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(14, 'https://example.com/images/that-lung-da-nam.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
-(15, 'https://example.com/images/non-luoi-trai-xam.jpg', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM');
+ (1, 'http://223.130.11.143:9000/e-commerce/a002626d-2f0b-4217-91dd-f3ee09a50520_Screenshot 2026-06-06 135657.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (2, 'http://223.130.11.143:9000/e-commerce/ea8f21ea-dac5-4082-8ae1-ec653a8dae7a_Screenshot 2026-06-06 135816.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (3, 'http://223.130.11.143:9000/e-commerce/ab97aed5-5056-423a-bdae-a956480c374b_Screenshot 2026-06-06 135922.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (4, 'http://223.130.11.143:9000/e-commerce/92ac3e5b-ece7-4a1e-83f0-e531a3dde55e_Screenshot 2026-06-06 140017.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (5, 'http://223.130.11.143:9000/e-commerce/d24025d4-c2de-4898-800e-dd5206ca9390_Screenshot 2026-06-06 140109.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (6, 'http://223.130.11.143:9000/e-commerce/7e057637-1619-4697-a393-53535ae682ca_Screenshot 2026-06-06 140154.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (7, 'http://223.130.11.143:9000/e-commerce/56182e45-cd7a-4e40-a497-fbc7b1cdbb0b_Screenshot 2026-06-06 140242.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (8, 'http://223.130.11.143:9000/e-commerce/32712579-bec5-483b-a504-4b50e7eee1fc_Screenshot 2026-06-06 140416.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (9, 'http://223.130.11.143:9000/e-commerce/963c65a2-319a-4f01-bffa-b637ac137fac_Screenshot 2026-06-06 140507.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (10, 'http://223.130.11.143:9000/e-commerce/a372769f-3ff2-4a1e-a243-06396a7a47f7_Screenshot 2026-06-06 140608.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (11, 'http://223.130.11.143:9000/e-commerce/a2fe6902-76f9-4baa-9fd9-2d343b9874ca_Screenshot 2026-06-06 140706.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (12, 'http://223.130.11.143:9000/e-commerce/69de4aa2-c45e-4b49-853c-70920bc9098a_Screenshot 2026-06-06 140757.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (13, 'http://223.130.11.143:9000/e-commerce/df76d7fd-2f7f-431f-b22e-73f5255c7f84_Screenshot 2026-06-06 140834.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (14, 'http://223.130.11.143:9000/e-commerce/7bf50810-4e74-4376-b655-78c57bb5ae6d_Screenshot 2026-06-06 140919.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM'),
+ (15, 'http://223.130.11.143:9000/e-commerce/7a9e92c7-54d6-431b-b704-6161f9f0e70e_Screenshot 2026-06-06 141010.png', 'ACT', CURRENT_TIMESTAMP, 'SYSTEM');
+
 
 -- 6. DỮ LIỆU MẪU CHO BẢNG STOCKS (KHO HÀNG)
 INSERT INTO inventories.stocks ("ProductId", "Quantity", "Status", "CreatedOn", "CreatedBy") VALUES

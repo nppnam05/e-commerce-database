@@ -147,3 +147,17 @@ CREATE TABLE inventories.stocks (
     "ModifiedOn" TIMESTAMP,
     "ModifiedBy" VARCHAR(100)
 );
+
+-- =============================================================================
+-- FOREIGN KEYS
+-- =============================================================================
+ALTER TABLE inventories.products
+    ADD CONSTRAINT "fk_product_category" FOREIGN KEY ("CategoryId") REFERENCES inventories.categories("Id"),
+    ADD CONSTRAINT "fk_product_color" FOREIGN KEY ("ColorId") REFERENCES inventories.colors("Id"),
+    ADD CONSTRAINT "fk_product_size" FOREIGN KEY ("SizeId") REFERENCES inventories.sizes("Id");
+
+ALTER TABLE inventories.product_images
+    ADD CONSTRAINT "fk_product_image_product" FOREIGN KEY ("productId") REFERENCES inventories.products("Id");
+
+ALTER TABLE inventories.stocks
+    ADD CONSTRAINT "fk_stock_product" FOREIGN KEY ("ProductId") REFERENCES inventories.products("Id");
