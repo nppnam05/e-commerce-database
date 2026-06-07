@@ -81,3 +81,16 @@ We provide built-in scripts in the `dev-workspace/` directory to automate daily 
 ## 🔗 Cross-Schema Dependencies
 
 Foreign key constraints between different schemas (e.g., `sales.carts` referencing `inventories.products`) are consolidated into a final migration script (`V2001__inventories_structure__create_foreign_keys.sql`). Because Flyway executes migrations sequentially by version number, this guarantees that all baseline tables across all schemas (V0001, V1000, V2000) are fully established before relationships are mapped out, preventing table-not-found errors.
+
+**Live Demo:** http://nam23211.id.vn:3000
+
+## 🔗 Related Projects
+
+- [Backend API](https://github.com/nppnam05/e-commerce-be)
+- [Frontend](https://github.com/nppnam05/e-commerce-fe)
+
+## 👨‍💻 Author
+
+**Nguyen Pham Phuong Nam**
+- GitHub: [@nppnam05](https://github.com/nppnam05)
+- Email: nppnam05@gmail.com
