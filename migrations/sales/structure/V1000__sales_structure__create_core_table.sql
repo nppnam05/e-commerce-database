@@ -92,6 +92,8 @@ CREATE TABLE sales.orders (
     "UserId" BIGINT NOT NULL,
     "Code" VARCHAR(255),
     "Address" VARCHAR(255),
+    "TotalQuantity" INT,
+    "TotalPrice" DECIMAL,
     "Status" VARCHAR(5),
     "CreatedOn" TIMESTAMP,
     "CreatedBy" VARCHAR(100),
