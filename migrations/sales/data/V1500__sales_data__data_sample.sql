@@ -64,14 +64,14 @@
 -- END $$;
 
 -- Orders
-INSERT INTO sales.orders ("UserId", "Code", "AddressId", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
-VALUES (2, '#OR001', 1, 3, 770000.00, 'PND', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.orders ("UserId", "Code", "AddressId", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
-VALUES (2, '#OR002', 1, 1, 250000.00, 'REJ', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.orders ("UserId", "Code", "AddressId", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
-VALUES (2, '#OR003', 2, 3, 810000.00, 'COM', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.orders ("UserId", "Code", "AddressId", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
-VALUES (2, '#OR004', 2, 3, 790000.00, 'SHP', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
+VALUES (2, 1, '#OR001', 3, 770000.00, 'PND', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
+VALUES (2, 1, '#OR002', 1, 250000.00, 'REJ', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
+VALUES (2, 2, '#OR003', 3, 810000.00, 'COM', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
+VALUES (2, 2, '#OR004', 3, 790000.00, 'SHP', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
 
 
 -- Order_Products
