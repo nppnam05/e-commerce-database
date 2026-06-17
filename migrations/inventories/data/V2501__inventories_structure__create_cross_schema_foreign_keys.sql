@@ -12,7 +12,7 @@
 --          after sample data has been populated.
 
 ALTER TABLE sales.carts
-    ADD CONSTRAINT "fk_cart_product" FOREIGN KEY ("ProductId") REFERENCES inventories.products("Id");
+    ADD CONSTRAINT "fk_cart_product" FOREIGN KEY ("ProductChildrenId") REFERENCES inventories.product_children("Id");
 
 ALTER TABLE sales.order_products
-    ADD CONSTRAINT "fk_order_product_product" FOREIGN KEY ("ProductId") REFERENCES inventories.products("Id");
+    ADD CONSTRAINT "fk_order_product_product" FOREIGN KEY ("ProductChildrenId") REFERENCES inventories.product_children("Id");

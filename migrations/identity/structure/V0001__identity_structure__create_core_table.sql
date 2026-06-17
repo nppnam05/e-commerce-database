@@ -148,3 +148,8 @@ ALTER TABLE identity.addresses
 
 ALTER TABLE identity.users
     ADD CONSTRAINT "fk_user_role" FOREIGN KEY ("RoleId") REFERENCES identity.roles("Id");
+
+-- INDEX
+CREATE INDEX IF NOT EXISTS idx_user_session_user_id ON identity.user_session("UserId");
+CREATE INDEX IF NOT EXISTS idx_addresses_user_id ON identity.addresses("UserId");
+CREATE INDEX IF NOT EXISTS idx_users_role_id ON identity.users("RoleId");

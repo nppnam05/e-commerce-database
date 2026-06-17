@@ -75,16 +75,16 @@ VALUES (2, 2, '#OR004', 3, 790000.00, 'SHP', CURRENT_TIMESTAMP, 'nppnam05@gmail.
 
 
 -- Order_Products
-INSERT INTO sales.order_products ("OrderId", "ProductId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
+INSERT INTO sales.order_products ("OrderId", "ProductChildrenId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
 VALUES (1, 1, 2, 250000.00, 'ACT', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.order_products ("OrderId", "ProductId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
+INSERT INTO sales.order_products ("OrderId", "ProductChildrenId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
 VALUES (1, 2, 1, 270000.00, 'ACT', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.order_products ("OrderId", "ProductId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
+INSERT INTO sales.order_products ("OrderId", "ProductChildrenId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
 VALUES (2, 1, 1, 250000.00, 'ACT', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.order_products ("OrderId", "ProductId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
+INSERT INTO sales.order_products ("OrderId", "ProductChildrenId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
 VALUES (3, 2, 3, 270000.00, 'ACT', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.order_products ("OrderId", "ProductId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
+INSERT INTO sales.order_products ("OrderId", "ProductChildrenId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
 VALUES (4, 1, 1, 250000.00, 'ACT', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.order_products ("OrderId", "ProductId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
+INSERT INTO sales.order_products ("OrderId", "ProductChildrenId", "Quantity", "SinglePrice", "Status", "CreatedOn", "CreatedBy")
 VALUES (4, 2, 2, 270000.00, 'ACT', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
 
