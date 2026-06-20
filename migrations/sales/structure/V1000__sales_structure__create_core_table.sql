@@ -94,6 +94,8 @@ CREATE TABLE sales.orders (
     "Code" VARCHAR(255),
     "TotalQuantity" INT,
     "TotalPrice" DECIMAL,
+    "PaymentStatus" VARCHAR(10),
+    "PaymentLinkId" VARCHAR(255),
     "Status" VARCHAR(5),
     "CreatedOn" TIMESTAMP,
     "CreatedBy" VARCHAR(100),
@@ -133,6 +135,7 @@ ALTER TABLE sales.orders
 
 -- INDEX
 CREATE INDEX IF NOT EXISTS idx_carts_user_id ON sales.carts("UserId");
+CREATE INDEX IF NOT EXISTS idx_carts_product_children_id ON sales.carts("ProductChildrenId");
 
 CREATE INDEX IF NOT EXISTS idx_orders_user_id ON sales.orders("UserId");
 CREATE INDEX IF NOT EXISTS idx_orders_status_created ON sales.orders("Status", "CreatedOn" DESC);

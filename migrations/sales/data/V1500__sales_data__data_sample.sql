@@ -64,14 +64,25 @@
 -- END $$;
 
 -- Orders
-INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
-VALUES (2, 1, '#OR001', 3, 770000.00, 'PND', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
-VALUES (2, 1, '#OR002', 1, 250000.00, 'REJ', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
-VALUES (2, 2, '#OR003', 3, 810000.00, 'COM', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
-INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "CreatedOn", "CreatedBy") 
-VALUES (2, 2, '#OR004', 3, 790000.00, 'SHP', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+-- Đơn số 1: Đơn mới lập, đang chờ xử lý và khách CHƯA thanh toán (Hoặc đang chờ quét mã)
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "PaymentStatus", "PaymentLinkId", "CreatedOn", "CreatedBy") 
+VALUES (2, 1, '#OR001', 3, 770000.00, 'PND', 'PND', 'link_payos_001', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+
+-- Đơn số 2: Đơn bị Admin từ chối (REJ) vì một lý do nào đó (ví dụ: hết hàng) cho dù khách ĐÃ trả tiền rồi
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "PaymentStatus", "PaymentLinkId", "CreatedOn", "CreatedBy") 
+VALUES (2, 1, '#OR002', 1, 250000.00, 'REJ', 'PAID', 'link_payos_002', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+
+-- Đơn số 3: Đơn hàng hoàn thành trọn vẹn, đã giao tới tay khách và tiền ĐÃ thu xong
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "PaymentStatus", "PaymentLinkId", "CreatedOn", "CreatedBy") 
+VALUES (2, 2, '#OR003', 3, 810000.00, 'COM', 'PAID', 'link_payos_003', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+
+-- Đơn số 4: Đơn đang đi giao, tiền thì shop ĐÃ thu trước qua PayOS rồi mới xuất kho
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "PaymentStatus", "PaymentLinkId", "CreatedOn", "CreatedBy") 
+VALUES (2, 2, '#OR004', 3, 790000.00, 'SHP', 'PAID', 'link_payos_004', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
+
+-- Đơn số 5 (BỔ SUNG): Khách chủ động bấm HỦY ĐƠN (CNL) khi chưa kịp thanh toán (Hết hạn link / Hoặc đổi ý)
+INSERT INTO sales.orders ("UserId", "AddressId", "Code", "TotalQuantity", "TotalPrice", "Status", "PaymentStatus", "PaymentLinkId", "CreatedOn", "CreatedBy") 
+VALUES (2, 1, '#OR005', 2, 450000.00, 'CNL', 'CNL', 'link_payos_005', CURRENT_TIMESTAMP, 'nppnam05@gmail.com');
 
 
 -- Order_Products

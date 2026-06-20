@@ -153,3 +153,5 @@ ALTER TABLE identity.users
 CREATE INDEX IF NOT EXISTS idx_user_session_user_id ON identity.user_session("UserId");
 CREATE INDEX IF NOT EXISTS idx_addresses_user_id ON identity.addresses("UserId");
 CREATE INDEX IF NOT EXISTS idx_users_role_id ON identity.users("RoleId");
+CREATE INDEX IF NOT EXISTS idx_user_session_token ON identity.user_session("SessionToken");
+CREATE INDEX IF NOT EXISTS idx_user_session_device_id ON identity.user_session("DeviceId");
