@@ -43,6 +43,7 @@ if [ "$DB_EXISTS" = "1" ]; then
         echo "Keeping existing database."
     elif [ "$CHOICE" = "2" ]; then
         read -p "Type 'YES' to confirm: " CONFIRM
+        CONFIRM=$(echo "$CONFIRM" | tr -d '\r')
         if [ "$CONFIRM" = "YES" ]; then
             echo "Terminating active connections..."
             docker exec -e PGPASSWORD=$DB_PASSWORD $CONTAINER psql -U $DB_USER -d postgres -c \
